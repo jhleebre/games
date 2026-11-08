@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>별빛 오락실</title>
+<meta name="description" content="브라우저에서 바로 하는 레트로풍 웹 게임 모음">
+<meta property="og:title" content="별빛 오락실">
+<meta property="og:description" content="브라우저에서 바로 하는 레트로풍 웹 게임 모음">
+<meta property="og:image" content="assets/covers/starship.jpg">
+<meta name="theme-color" content="#05061a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8' shape-rendering='crispEdges'%3E%3Cpath fill='%23ffd23f' d='M3 0h2v2h2v2h-1v1h1v3h-2v-1h-2v1h-2v-3h1v-1h-1v-2h2z'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/galmuri.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+<div class="crt" aria-hidden="true"></div>
+
+<header class="top">
+  <p class="coin"><span class="blink">●</span> INSERT COIN</p>
+  <h1 class="logo">별빛 오락실</h1>
+  <p class="lede">설치 없이 브라우저에서 바로 하는 레트로풍 게임 모음</p>
+  <dl class="score">
+    <div><dt>GAMES</dt><dd id="count">00</dd></div>
+    <div><dt>UPDATED</dt><dd id="updated">----</dd></div>
+  </dl>
+</header>
+
+<main>
+  <div class="bar">
+    <div class="chips" id="chips" role="group" aria-label="장르"></div>
+    <label class="sort">
+      <span>정렬</span>
+      <select id="sort">
+        <option value="new">새로 나온 순</option>
+        <option value="name">이름순</option>
+      </select>
+    </label>
+  </div>
+
+  <ul class="grid" id="grid"></ul>
+
+  <p class="hint"><kbd>←</kbd><kbd>→</kbd><kbd>↑</kbd><kbd>↓</kbd> 고르기 · <kbd>Enter</kbd> 시작 · <kbd>I</kbd> 자세히</p>
+</main>
+
+<footer class="foot">
+  <a href="https://github.com/jhleebre">github.com/jhleebre</a>
+  <span>이미지·소리 파일 없이 코드로 그리고 합성한 게임들입니다.</span>
+</footer>
+
+<dialog id="detail" aria-labelledby="dTitle">
+  <form method="dialog" class="close"><button aria-label="닫기">✕</button></form>
+  <div class="dCover" id="dCover"></div>
+  <div class="dBody">
+    <p class="dMeta" id="dMeta"></p>
+    <h2 id="dTitle"></h2>
+    <p id="dAbout"></p>
+    <h3>특징</h3>
+    <ul class="dFeat" id="dFeat"></ul>
+    <h3>조작법</h3>
+    <table class="dKeys" id="dKeys"></table>
+    <p class="dTouch" id="dTouch"></p>
+    <div class="dBtns">
+      <a class="btn play" id="dPlay">▶ 플레이</a>
+      <a class="btn ghost" id="dRepo" target="_blank" rel="noopener">소스 보기</a>
+    </div>
+  </div>
+</dialog>
+
+<script src="games.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
